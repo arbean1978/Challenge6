@@ -167,3 +167,16 @@ function getFiveDayForecast() {
 		}
 	});
 };
+
+function initLoad() {
+
+	var cityHistStore = JSON.parse(localStorage.getItem('city'));
+
+	if (cityHistStore !== null) {
+		cityHist = cityHistStore
+	}
+	getHistory();
+	getWeatherToday();
+};
+
+initLoad();
